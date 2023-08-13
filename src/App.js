@@ -22,12 +22,16 @@ function App() {
     setShowAddTodo(false);
   };
 
+  const handleDeleteTodo = (id) => {
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div className="App">
       <Heading />
-      <TodoList todos={todos} onToggleTodo={handleCompleteTodo} />
+      <TodoList todos={todos} onToggleTodo={handleCompleteTodo} onDeleteTodo={handleDeleteTodo} />
       {showAddTodo ? <FormAddTodo onAddTodo={handleAddTodo} /> : ''}
-      <Button onClick={handleShowAddTodo} colorClass={showAddTodo ? 'red' : 'green'}>
+      <Button onClick={handleShowAddTodo} size="large" colorClass={showAddTodo ? 'red' : 'green'}>
         {showAddTodo ? 'close' : 'new todo'}
       </Button>
     </div>

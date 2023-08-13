@@ -1,6 +1,9 @@
-export default function Button({onClick, colorClass, children}) {
+export default function Button({onClick, size, colorClass, children}) {
   return (
-    <button className={`btn ${colorClass ? colorClass : ''}`} onClick={onClick}>
+    <button
+      className={`btn  ${size ? 'btn--' + size : ''} ${colorClass ? colorClass : ''}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

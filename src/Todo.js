@@ -1,4 +1,6 @@
-export default function Todo({todo, onToggleTodo}) {
+import Button from './Button';
+
+export default function Todo({todo, onToggleTodo, onDeleteTodo}) {
   return (
     <li>
       <input
@@ -7,7 +9,14 @@ export default function Todo({todo, onToggleTodo}) {
         value={todo.completed}
         onChange={() => onToggleTodo(todo.id)}
       />
-      <span style={todo.completed ? {textDecoration: 'line-through'} : {}}>{todo.description}</span>
+      <span
+        style={{marginRight: 'auto', textDecoration: `${todo.completed ? 'line-through' : 'none'}`}}
+      >
+        {todo.description}
+      </span>
+      <Button size={'small'} colorClass="red" onClick={() => onDeleteTodo(todo.id)}>
+        delete
+      </Button>
     </li>
   );
 }

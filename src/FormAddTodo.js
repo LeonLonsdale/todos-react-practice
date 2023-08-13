@@ -25,7 +25,9 @@ export default function FormAddTodo({onAddTodo}) {
         onChange={(e) => setDescription(e.target.value)}
         type="text"
       />
-      <Button colorClass="green">submit</Button>
+      <Button colorClass="green" size="medium">
+        submit
+      </Button>
     </form>
   );
 }

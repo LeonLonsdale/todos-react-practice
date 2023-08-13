@@ -49,10 +49,23 @@ h1 {
   /* width: 100%; */
   border-radius: 0.2rem;
   border: none;
-  padding: 0.8rem;
-  font-size: 1.2rem;
+
   transition-duration: 0.5s;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.btn--small {
+  padding: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.btn--medium {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn--large {
+  padding: 0.8rem;
+  font-size: 1.2rem;
 }
 
 .btn:hover {
